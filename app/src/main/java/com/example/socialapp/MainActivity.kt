@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity(), IPostAdapter {
 
     override fun onStop() {
         super.onStop()
+        adapter.notifyDataSetChange()
         adapter.stopListening()
     }
 
