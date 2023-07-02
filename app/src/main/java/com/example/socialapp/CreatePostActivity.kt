@@ -20,6 +20,12 @@ class CreatePostActivity : AppCompatActivity() {
             if(input.isNotEmpty()) {
                 postDao.addPost(input)
                 finish()
+
+                // val exintent = Intent(this, MainActivity::class.java)
+                // startActivity(exintent)
+                //I found in some device ths shows an error "java.lang.IndexOutOfBoundsException: Inconsistency detected. Invalid view holder adapter positionPostViewHolder"
+                // By replacing the setUpRecyclerView it can be resolved while tapping the post button but if we go back by using phones gesture the app crashed with same erroe
+                // can you please update why is this happening
             }
         }
 
